@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Emagrecimento Sem Passar Fome</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#faf8f4;--bg2:#f3efe8;--bg3:#ebe5d8;--ink:#1c1917;--ink2:#44403c;--ink3:#78716c;--accent:#b5633a;--accent2:#8f4c2a;--aL:rgba(181,99,58,.10);--aL2:rgba(181,99,58,.18);--green:#4a7c59;--gL:rgba(74,124,89,.12);--border:rgba(28,25,23,.10)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+section{padding:64px 0}
+.display{font-family:'Playfair Display',serif;font-weight:900;line-height:1.1;letter-spacing:-.02em}
+#topbar{position:sticky;top:0;z-index:100;background:rgba(250,248,244,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:center}
+#topbar a{background:var(--accent);color:#fff;font-weight:700;font-size:13px;padding:10px 24px;border-radius:99px;text-decoration:none;transition:background .2s}
+#topbar a:hover{background:var(--accent2)}
+.btn{display:block;width:100%;background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:18px 32px;border-radius:99px;border:none;cursor:pointer;text-align:center;text-decoration:none;box-shadow:0 8px 32px rgba(181,99,58,.28);transition:background .2s,transform .18s}
+.btn:hover{background:var(--accent2);transform:translateY(-2px)}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,38px);font-weight:900;color:var(--ink);line-height:1.15;margin-bottom:16px}
+.sec-sub{font-size:16px;color:var(--ink2);line-height:1.75;margin-bottom:32px}
+#hero{padding:72px 0 56px;text-align:center}
+.hero-title{font-size:clamp(34px,7vw,56px);margin-bottom:18px}
+.hero-sub{font-size:18px;color:var(--ink2);max-width:520px;margin:0 auto 32px}
+.hero-cta{max-width:360px;margin:0 auto 24px}
+.proof{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--ink3)}
+.proof span{display:flex;align-items:center;gap:6px}
+.mockup{max-width:240px;margin:44px auto 0;background:var(--bg2);border-radius:18px;padding:28px 24px;border:1px solid var(--border);box-shadow:0 20px 50px rgba(28,25,23,.10)}
+.mockup-label{font-size:9px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.mockup-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--ink);line-height:1.2;margin-bottom:8px}
+.mockup-sub{font-size:11px;color:var(--ink3);line-height:1.6;margin-bottom:14px}
+.bar{height:3px;background:var(--accent);border-radius:99px;margin-bottom:8px}
+.bar-sm{height:2px;background:var(--bg3);border-radius:99px;margin-bottom:7px}
+#dor{background:var(--bg2)}
+.dor-list{list-style:none;display:grid;gap:10px;margin-bottom:24px}
+.dor-list li{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--bg);border-radius:12px;border:1px solid var(--border);font-size:14px;color:var(--ink2);line-height:1.6}
+.dor-list li .i{font-size:17px;flex-shrink:0;margin-top:2px}
+.punch{font-family:'Playfair Display',serif;font-size:clamp(19px,4vw,25px);font-weight:700;color:var(--ink);line-height:1.4;text-align:center;padding:26px 22px;background:var(--aL);border:1px solid var(--aL2);border-radius:14px}
+#solucao{background:var(--bg)}
+.bcards{display:grid;gap:12px}
+.bcard{display:flex;gap:14px;align-items:flex-start;padding:18px;background:var(--bg2);border-radius:14px;border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.bcard:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(28,25,23,.08)}
+.bicon{width:42px;height:42px;border-radius:11px;background:var(--aL);display:grid;place-items:center;font-size:19px;flex-shrink:0}
+.bcard h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.bcard p{font-size:13px;color:var(--ink3);line-height:1.6}
+#conteudo{background:var(--bg2)}
+.clist{list-style:none;display:grid;gap:9px}
+.clist li{display:flex;align-items:center;gap:11px;padding:13px 15px;background:var(--bg);border-radius:10px;border:1px solid var(--border);font-size:14px;color:var(--ink2)}
+.clist li::before{content:"✓";width:22px;height:22px;border-radius:50%;background:var(--gL);color:var(--green);font-size:11px;font-weight:800;display:grid;place-items:center;flex-shrink:0}
+#paraquem{background:var(--bg)}
+.pqgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pqbox{padding:22px;border-radius:14px}
+.pqbox.sim{background:var(--gL);border:1px solid rgba(74,124,89,.2)}
+.pqbox.nao{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.15)}
+.pqbox h3{font-size:13px;font-weight:800;margin-bottom:12px;letter-spacing:.04em}
+.pqbox.sim h3{color:var(--green)}
+.pqbox.nao h3{color:#dc2626}
+.pql{list-style:none;display:grid;gap:9px}
+.pql li{font-size:12px;color:var(--ink2);display:flex;gap:7px;align-items:flex-start;line-height:1.5}
+.pql.sim li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+.pql.nao li::before{content:"✗";color:#dc2626;font-weight:800;flex-shrink:0}
+#oferta{background:var(--ink);color:#fff;text-align:center}
+.ocard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:34px 28px;max-width:420px;margin:0 auto}
+.pbadge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:rgba(181,99,58,.15);border:1px solid rgba(181,99,58,.3);padding:5px 12px;border-radius:99px;margin-bottom:18px}
+.pold{font-size:15px;color:rgba(255,255,255,.35);text-decoration:line-through;margin-bottom:4px}
+.pmain{font-family:'Playfair Display',serif;font-size:54px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px}
+.pmain sup{font-size:22px;vertical-align:super}
+.pnote{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:24px}
+.oinc{list-style:none;display:grid;gap:9px;text-align:left;margin-bottom:24px}
+.oinc li{display:flex;align-items:center;gap:9px;font-size:13px;color:rgba(255,255,255,.8)}
+.oinc li::before{content:"✓";color:#5eead4;font-weight:800;flex-shrink:0}
+.obtn{display:block;width:100%;background:var(--accent);color:#fff;font-family:'DM Sans',sans-serif;font-weight:800;font-size:16px;padding:18px 28px;border-radius:99px;border:none;cursor:pointer;text-decoration:none;text-align:center;box-shadow:0 10px 36px rgba(181,99,58,.4);transition:background .2s,transform .15s}
+.obtn:hover{background:#c9703f;transform:translateY(-2px)}
+.oguarantee{margin-top:16px;font-size:12px;color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:5px}
+#faq{background:var(--bg2)}
+.fitem{border-bottom:1px solid var(--border);padding:18px 0}
+.fq{font-weight:700;font-size:14px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:10px}
+.arrow{font-size:18px;color:var(--accent);transition:transform .25s;flex-shrink:0}
+.fq.open .arrow{transform:rotate(45deg)}
+.fa{font-size:13px;color:var(--ink3);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.fa.open{max-height:200px;padding-top:10px}
+#finalcta{background:var(--bg);text-align:center}
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:12px;color:var(--ink3)}
+footer p{margin-bottom:5px}
+#sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(250,248,244,.96);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:12px 20px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.anim{opacity:0}
+.anim.on{animation:fadeUp .5s ease forwards}
+@media(max-width:600px){#sticky{display:block}.pqgrid{grid-template-columns:1fr}.hero-title{font-size:32px}section{padding:48px 0}}
+</style>
+</head>
+<body>
+<div id="topbar"><a href="https://pay.kiwify.com.br/1TevxGE" target="_blank">🔥 Garantir acesso agora — R$27</a></div>
+
+<section id="hero">
+<div class="wrap">
+<span class="eyebrow anim">Guia Prático de Emagrecimento</span>
+<h1 class="display hero-title anim">Emagrecimento<br/><span style="color:var(--accent)">Sem Passar Fome</span></h1>
+<p class="hero-sub anim">Aprenda a perder peso com estratégia, sem sofrimento e sem dietas que só funcionam no papel.</p>
+<div class="hero-cta anim"><a href="https://pay.kiwify.com.br/1TevxGE" target="_blank" class="btn">Quero meu acesso agora →</a></div>
+<div class="proof anim"><span>📲 Acesso imediato</span><span>🔒 Compra segura</span><span>📖 100% digital</span></div>
+<div class="mockup anim">
+<div class="mockup-label">E-book Digital</div>
+<div class="mockup-title">Emagrecimento Sem Passar Fome</div>
+<div class="mockup-sub">Um guia real para perder peso com estratégia, sem sofrimento e sem dietas malucas</div>
+<div class="bar"></div><div class="bar-sm"></div><div class="bar-sm" style="width:65%"></div>
+<div style="margin-top:14px;font-size:11px;color:var(--accent);font-weight:700">✦ Acesso imediato após pagamento</div>
+</div>
+</div>
+</section>
+
+<section id="dor">
+<div class="wrap">
+<span class="eyebrow anim">Você se identifica?</span>
+<h2 class="display sec-title anim">Isso soa familiar?</h2>
+<ul class="dor-list">
+<li class="anim"><span class="i">😮‍💨</span>Começa animada na segunda e para na quarta por causa da fome</li>
+<li class="anim"><span class="i">🔄</span>Já tentou várias dietas e continua no mesmo lugar</li>
+<li class="anim"><span class="i">😤</span>Sente que não tem força de vontade e se culpa por isso</li>
+<li class="anim"><span class="i">😰</span>A fome parece maior do que qualquer motivação</li>
+<li class="anim"><span class="i">📉</span>Perde peso, recupera, perde, recupera — ciclo sem fim</li>
+<li class="anim"><span class="i">🌀</span>Cansada de contar caloria e viver em restrição</li>
+</ul>
+<div class="punch anim">"Você não falhou na dieta.<br/>A dieta falhou em você."</div>
+</div>
+</section>
+
+<section id="solucao">
+<div class="wrap">
+<span class="eyebrow anim">A solução</span>
+<h2 class="display sec-title anim">Existe um jeito mais inteligente de emagrecer.</h2>
+<p class="sec-sub anim">Não é mais uma dieta. É uma estratégia alimentar que respeita seu corpo, controla sua fome e gera resultado real.</p>
+<div class="bcards">
+<div class="bcard anim"><div class="bicon">🍽️</div><div><h3>Saciedade de verdade</h3><p>Combinações alimentares que prolongam a saciedade e eliminam a fome constante.</p></div></div>
+<div class="bcard anim"><div class="bicon">🧠</div><div><h3>Estratégia, não restrição</h3><p>Pare de depender de força de vontade. Com o método certo, seu corpo coopera com você.</p></div></div>
+<div class="bcard anim"><div class="bicon">🔁</div><div><h3>Consistência sustentável</h3><p>Um método que você consegue manter na rotina real, sem perfeição, sem sofrimento.</p></div></div>
+<div class="bcard anim"><div class="bicon">💚</div><div><h3>Relação saudável com a comida</h3><p>Chega de culpa depois de comer. Equilíbrio sem extremos.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="conteudo">
+<div class="wrap">
+<span class="eyebrow anim">O que está dentro</span>
+<h2 class="display sec-title anim">Tudo que você vai aprender</h2>
+<ul class="clist">
+<li class="anim">Como entender a fome de verdade e parar de tratá-la como inimiga</li>
+<li class="anim">As combinações alimentares que aumentam a saciedade por horas</li>
+<li class="anim">Como montar pratos equilibrados sem pesar nem contar nada</li>
+<li class="anim">Estratégias práticas para os dias de fraqueza e compulsão</li>
+<li class="anim">Por que dietas restritivas geram mais fome e o que fazer diferente</li>
+<li class="anim">Como criar uma rotina alimentar que você consiga manter de verdade</li>
+<li class="anim">O erro silencioso que sabota 90% das tentativas de emagrecimento</li>
+<li class="anim">Como sair do ciclo de começa-para-recomeça definitivamente</li>
+</ul>
+</div>
+</section>
+
+<section id="paraquem">
+<div class="wrap">
+<span class="eyebrow anim">Público certo</span>
+<h2 class="display sec-title anim">Esse guia é pra você?</h2>
+<div class="pqgrid">
+<div class="pqbox sim anim"><h3>✓ SIM, é pra você se…</h3>
+<ul class="pql sim">
+<li>Já tentou emagrecer e parou por causa da fome</li>
+<li>Quer um método mais humano e sustentável</li>
+<li>Cansada de dieta que só funciona no começo</li>
+<li>Quer resultado sem guerra com a comida</li>
+</ul></div>
+<div class="pqbox nao anim"><h3>✗ NÃO é pra você se…</h3>
+<ul class="pql nao">
+<li>Busca fórmula mágica ou resultado em 7 dias</li>
+<li>Não quer mudar nenhum hábito</li>
+<li>Precisa de acompanhamento médico</li>
+</ul></div>
+</div>
+</div>
+</section>
+
+<section id="oferta">
+<div class="wrap">
+<span class="eyebrow anim" style="color:var(--accent)">Oferta de lançamento</span>
+<h2 class="display sec-title anim" style="color:#fff;margin-bottom:8px">Comece hoje.<br/>Sem desculpa.</h2>
+<p class="sec-sub anim" style="color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 32px">Acesso imediato ao guia completo com tudo que você precisa.</p>
+<div class="ocard anim">
+<div class="pbadge">🔥 Preço de lançamento</div>
+<div class="pold">De R$97</div>
+<div class="pmain"><sup>R$</sup>27</div>
+<div class="pnote">Pagamento único • Acesso vitalício</div>
+<ul class="oinc">
+<li>Guia completo Emagrecimento Sem Passar Fome</li>
+<li>Estratégias práticas de saciedade e consistência</li>
+<li>Acesso imediato após a compra</li>
+<li>Leia em qualquer dispositivo</li>
+</ul>
+<a href="https://pay.kiwify.com.br/1TevxGE" target="_blank" class="obtn">Garantir meu acesso por R$27 →</a>
+<div class="oguarantee">🔒 Compra 100% segura via Kiwify</div>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap">
+<span class="eyebrow anim">Dúvidas</span>
+<h2 class="display sec-title anim">Perguntas frequentes</h2>
+<div class="fitem"><div class="fq" onclick="toggleFaq(this)">Como recebo o e-book após a compra?<span class="arrow">+</span></div><div class="fa">Assim que o pagamento for confirmado, você recebe o acesso por e-mail automaticamente pela Kiwify. É tudo digital e imediato.</div></div>
+<div class="fitem"><div class="fq" onclick="toggleFaq(this)">Funciona para quem não tem muito tempo?<span class="arrow">+</span></div><div class="fa">Sim. O guia foi feito para a vida real, com estratégias simples que você aplica no dia a dia sem precisar de estrutura.</div></div>
+<div class="fitem"><div class="fq" onclick="toggleFaq(this)">Precisa fazer uma dieta específica?<span class="arrow">+</span></div><div class="fa">Não. O foco não é uma dieta rígida, mas estratégias de alimentação que geram saciedade e resultado sem restrição extrema.</div></div>
+<div class="fitem"><div class="fq" onclick="toggleFaq(this)">O pagamento é seguro?<span class="arrow">+</span></div><div class="fa">Sim. O pagamento é processado pela Kiwify, uma das principais plataformas de infoprodutos do Brasil, com total segurança.</div></div>
+</div>
+</section>
+
+<section id="finalcta">
+<div class="wrap">
+<div style="width:44px;height:3px;background:var(--accent);border-radius:99px;margin:0 auto 28px"></div>
+<h2 class="display sec-title anim" style="text-align:center;max-width:480px;margin:0 auto 14px">Você não precisa de mais uma dieta.<br/>Precisa do <span style="color:var(--accent)">método certo.</span></h2>
+<p class="sec-sub anim" style="text-align:center;max-width:440px;margin:0 auto 28px">Com estratégia e consistência, o resultado aparece.</p>
+<div style="max-width:340px;margin:0 auto" class="anim"><a href="https://pay.kiwify.com.br/1TevxGE" target="_blank" class="btn">Garantir acesso por R$27 →</a></div>
+<p class="anim" style="text-align:center;margin-top:14px;font-size:12px;color:var(--ink3)">🔒 Compra segura • Acesso imediato • Pagamento único</p>
+</div>
+</section>
+
+<footer>
+<p><strong>Emagrecimento Sem Passar Fome</strong> — Produto digital educativo</p>
+<p>Este produto não substitui acompanhamento médico ou nutricional profissional.</p>
+<p style="margin-top:8px">© 2025 · Todos os direitos reservados</p>
+</footer>
+
+<div id="sticky"><a href="https://pay.kiwify.com.br/1TevxGE" target="_blank" class="btn" style="font-size:14px;padding:13px 24px">🔥 Garantir acesso — R$27</a></div>
+
+<script>
+function toggleFaq(el){
+  var a=el.nextElementSibling,open=a.classList.contains('open');
+  document.querySelectorAll('.fa').forEach(function(x){x.classList.remove('open')});
+  document.querySelectorAll('.fq').forEach(function(x){x.classList.remove('open')});
+  if(!open){a.classList.add('open');el.classList.add('open')}
+}
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.1});
+document.querySelectorAll('.anim').forEach(function(el){obs.observe(el)});
+var oferta=document.getElementById('oferta'),sticky=document.getElementById('sticky');
+var obs2=new IntersectionObserver(function(entries){sticky.style.display=entries[0].isIntersecting?'none':'block'});
+obs2.observe(oferta);
+</script>
+</body>
+</html>
